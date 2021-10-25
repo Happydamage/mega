@@ -1,0 +1,119 @@
+.NeonCC {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  .box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    height: 400px;
+    transition: .5s;
+    color: white;
+    background: black;
+
+    &:hover {
+      transform: translateY(-20px);
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      content: '';
+      background: linear-gradient(45deg, #ffbc00, #ff0058);
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      content: '';
+      background: linear-gradient(45deg, #ffbc00, #ff0058);
+      filter: blur(30px);
+    }
+
+    &:nth-child(2)::before,
+    &:nth-child(2)::after {
+      background: linear-gradient(315deg, #03a9f4, #ff0058);
+    }
+
+    &:nth-child(3)::before,
+    &:nth-child(3)::after {
+      background: linear-gradient(315deg, #4dff03, #00d0ff);
+    }
+
+    span {
+      position: absolute;
+      z-index: 2;
+      top: 6px;
+      right: 6px;
+      bottom: 6px;
+      left: 6px;
+      background: rgba(0, 0, 0, .6);
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+
+        content: '';
+        pointer-events: none;
+        background: rgba(255, 255, 255, .1);
+      }
+    }
+
+    .content {
+      position: relative;
+      z-index: 10;
+      overflow-y: scroll;
+      height: 85%;
+      padding: 20px 40px;
+
+      &::-webkit-scrollbar {
+        width: 6px;
+        background: transparent;
+
+        &-thumb {
+          width: 6px;
+          height: 10px;
+          background: white;
+        }
+      }
+
+      h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
+        color: white;
+      }
+
+      p {
+        font-size: 1.1em;
+        line-height: 1.4em;
+        margin-bottom: 10px;
+        color: white;
+      }
+
+      a {
+        font-size: 1.1em;
+        font-weight: bold;
+        display: inline-block;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        background: white;
+      }
+    }
+  }
+}
